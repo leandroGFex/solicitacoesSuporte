@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: oklch(0.15 0.02 240);
+  --color-foreground: oklch(0.95 0.01 240);
+  
+  --color-card: oklch(0.18 0.03 240);
+  --color-card-foreground: oklch(0.95 0.01 240);
+  
+  --color-popover: oklch(0.18 0.03 240);
+  --color-popover-foreground: oklch(0.95 0.01 240);
+  
+  --color-primary: oklch(0.6 0.25 240);
+  --color-primary-foreground: oklch(1 0 0);
+  
+  --color-secondary: oklch(0.25 0.05 240);
+  --color-secondary-foreground: oklch(0.95 0.01 240);
+  
+  --color-muted: oklch(0.25 0.05 240);
+  --color-muted-foreground: oklch(0.7 0.02 240);
+  
+  --color-accent: oklch(0.3 0.1 240);
+  --color-accent-foreground: oklch(0.95 0.01 240);
+  
+  --color-destructive: oklch(0.5 0.2 20);
+  --color-destructive-foreground: oklch(1 0 0);
+  
+  --color-border: oklch(0.25 0.05 240);
+  --color-input: oklch(0.25 0.05 240);
+  --color-ring: oklch(0.6 0.25 240);
+
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-white;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+  
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-lg border border-white/5 shadow-2xl;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-indigo-600;
+  }
+}
