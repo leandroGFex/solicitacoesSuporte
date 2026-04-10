@@ -1,5 +1,4 @@
 import DashboardLayout from '@/components/dashboard-layout'
-import { CardLineChart } from '@/components/stats/charts'
 import { 
   TrendingUp, 
   Clock, 
